@@ -11,22 +11,27 @@ public class Lesson2 {
         Book book1 = new Book("Crime and Punishment", author1, 1866);
         Book book2 = new Book("1984", author2, 1949);
 
-        book1.setBookName("-"); // can be used if requested
-
-        book1.setYearOfPublication(1961);
+        book1.setYearOfPublication(2001);
 
         System.out.println("    Книга 1:");
-        System.out.println("Название: " + book1.getBookName());
-        System.out.println("Автор: " + book1.getAuthor().getFirstName() + " " + book1.getAuthor().getLastName());
-        System.out.println("Год публикации: " + book1.getYearOfPublication());
-
-        System.out.println("");
+        System.out.println(book1);
 
         System.out.println("    Книга 2:");
-        System.out.println("Название: " + book2.getBookName());
-        System.out.println("Автор: " + book2.getAuthor().getFirstName() + " " + book2.getAuthor().getLastName());
-        System.out.println("Год публикации: " + book2.getYearOfPublication());
+        System.out.println(book2);
 
+        boolean authorsEqual = author1.equals(author2);
+        System.out.println("Схожи ли авторы - " + authorsEqual);
+
+        boolean booksEqual = book1.equals(book2);
+        System.out.println("Схожи ли названия и год публикации книг - " + booksEqual);
+
+        System.out.println();
+
+        int author1HashCode = author1.hashCode();
+        int book1HashCode = book1.hashCode();
+
+        System.out.println("Hash Code of Author 1: " + author1HashCode);
+        System.out.println("Hash Code of Book 1 : " + book1HashCode);
     }
 
 }
